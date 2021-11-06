@@ -1,0 +1,146 @@
+/* CSS Resets */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 10px;
+}
+
+
+/* Variables */
+
+// Colors
+$primary-clr: #00008b;
+$primary-clr-500: #6495ed;
+$black-clr: #000;
+$black-clr-500: #333;
+$white-clr: #ffff;
+$light-clr: #fff8dc;
+$danger-clr: #ff0000;
+$success-clr: #00a36c;
+$smooth: all 0.3s ease-in-out;
+
+/* Helpful Classes */
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+// Buttons
+.btn {
+    padding: 0.5rem 2rem;
+    margin: 0.5rem;
+    outline: none;
+    background-color: transparent;
+    border-radius: 2rem;
+    border: 1px solid $black-clr;
+    font-size: 2.2rem;
+    transition: $smooth;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: $primary-clr-500;
+    color: $white-clr;
+    &:hover {
+        color: $primary-clr-500;
+        background-color: $white-clr;
+    }
+}
+
+.btn-secondary {
+    background-color: $black-clr-500;
+    color: $white-clr;
+    &:hover {
+        background-color: $white-clr;
+        color: $black-clr-500;
+    }
+}
+
+// Section Heading
+.section-heading {
+    font-size: 4rem;
+    width: max-content;
+    padding: 1rem 2rem;
+    text-align: center;
+    margin: 4rem auto 6rem auto;
+}
+
+.form-error {
+    padding: 1.5rem 2rem;
+    margin: 1.5rem;
+    line-height: 3rem;
+    letter-spacing: 0.08rem;
+    text-align: center;
+    background-color: $danger-clr;
+    color: $white-clr;
+    font-weight: bold;
+    font-size: 2rem;
+    border-radius: 2rem;
+}
+
+.danger {
+    font-weight: bold;
+    background-color: $danger-clr;
+}
+
+.success {
+    font-weight: bold;
+    background-color: $success-clr;
+}
+
+.heading {
+    font-size: 3.5rem;
+    width: max-content;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    margin: 1rem auto 2rem auto;
+}
+
+// Container
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 70rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 95rem;
+    }
+}
+
+@media (min-width: 1250px) {
+    .container {
+        max-width: 115rem;
+    }
+}
