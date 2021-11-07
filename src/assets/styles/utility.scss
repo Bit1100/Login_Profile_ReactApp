@@ -116,8 +116,10 @@ $smooth: all 0.3s ease-in-out;
 .heading {
     font-size: 3.5rem;
     width: max-content;
+    color: $white-clr;
     padding: 0.5rem 1rem;
     text-align: center;
+    text-shadow: 2px 2px 5px $black-clr;
     margin: 1rem auto 2rem auto;
 }
 
