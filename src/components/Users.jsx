@@ -31,7 +31,7 @@ const TabularData = () => {
                 <tr key={_id}>
                   <td>{_id}</td>
                   <td>
-                    <img src={`${image}`} alt="User Profile Pic" />
+                    <img src={image} alt="User Profile Pic" />
                   </td>
                   <td>{name}</td>
                   <td>{dob}</td>
@@ -40,7 +40,7 @@ const TabularData = () => {
                   <td>
                     <button
                       onClick={() => {
-                        setError({ msg: "", errStatus: false });
+                        setError({ msg: "", errStatus: false, msgClass: "" });
                         setFormdata(user);
                         setModalActive(true);
                       }}

@@ -11,8 +11,8 @@ import {
   MAX_USERNAME_LENGTH,
   MIN_PASSWORD_LENGTH,
   MAX_PASSWORD_LENGTH,
-  MIN_DECIMAL_LENGTH,
   MAX_DECIMAL_LENGTH,
+  ZERO,
 } from "./constants";
 
 function App() {
@@ -140,7 +140,7 @@ function App() {
     );
 
     const heightPattern = new RegExp(
-      `^([1-9]|10)\.([0-9]{${MIN_DECIMAL_LENGTH},${MAX_DECIMAL_LENGTH}})$`
+      `^([1-9]|10)\.?([0-9]{${ZERO},${MAX_DECIMAL_LENGTH}})$`
     );
 
     let _usersData = usersData.users;
@@ -167,7 +167,7 @@ function App() {
       showError({ msg: "All Fields Required", errStatus: true });
       return;
     } else {
-      showError({ msg: "", errStatus: false });
+      showError({ msg: "", errStatus: false, msgClass: "" });
     }
 
     /* Name Validation */
@@ -179,7 +179,7 @@ function App() {
       return;
     } else {
       updateUser.name = name.value;
-      showError({ msg: "", errStatus: false });
+      showError({ msg: "", errStatus: false, msgClass: "" });
     }
 
     /* PAN Card Validation */
@@ -191,7 +191,11 @@ function App() {
       updateUser.dob = dob.value;
       updateUser.religion = religion.value;
       updateUser.image = image;
-      showError({ msg: "", errStatus: false });
+      showError({
+        msg: "Profile Updated",
+        errStatus: false,
+        msgClass: "success",
+      });
     }
 
     // Replace the old value by new if updated

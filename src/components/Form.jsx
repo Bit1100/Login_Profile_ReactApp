@@ -38,7 +38,13 @@ const Form = () => {
         onSubmit={updateUserData}
         className="form flex flex-col items-center"
       >
-        {error.errStatus ? <p className="form-error">{error.msg}</p> : ""}
+        {error.errStatus ? (
+          <p className="form-error">{error.msg}</p>
+        ) : error.msgClass ? (
+          <p className={`form-error ${error.msgClass}`}>{error.msg}</p>
+        ) : (
+          ""
+        )}
         <input name="id" type="text" {...bind_Id} disabled />
         <input name="image" type="file" placeholder="Upload your image" />
         <input
@@ -66,7 +72,16 @@ const Form = () => {
           {...bindReligion}
         />
         <div className="confirmation flex justify-betweem items-center">
-          <button type="submit" className="btn btn-primary">
+          <button
+            type="submit"
+            className={
+              error.errStatus
+                ? "btn btn-primary danger"
+                : error.msgClass
+                ? "btn btn-primary success"
+                : "btn btn-primary"
+            }
+          >
             Save
           </button>
           <button

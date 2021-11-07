@@ -71,7 +71,9 @@ const LoginForm = () => {
             className={
               error.errStatus
                 ? "btn btn-secondary danger"
-                : "btn btn-primary success"
+                : error.msgClass
+                ? "btn btn-primary success"
+                : "btn btn-secondary"
             }
           >
             {hasValidated ? "Redirect" : "Submit"}
