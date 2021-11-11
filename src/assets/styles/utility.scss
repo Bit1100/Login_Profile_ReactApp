@@ -22,6 +22,7 @@ $white-clr: #ffff;
 $light-clr: #fff8dc;
 $danger-clr: #ff0000;
 $success-clr: #00a36c;
+$gold-clr: #fff423;
 $smooth: all 0.3s ease-in-out;
 
 /* Helpful Classes */
@@ -93,7 +94,6 @@ $smooth: all 0.3s ease-in-out;
 .form-error {
     padding: 1.5rem 2rem;
     margin: 1.5rem;
-    line-height: 3rem;
     letter-spacing: 0.08rem;
     text-align: center;
     background-color: $danger-clr;
@@ -101,6 +101,9 @@ $smooth: all 0.3s ease-in-out;
     font-weight: bold;
     font-size: 2rem;
     border-radius: 2rem;
+    .icons {
+        margin-right: 1rem;
+    }
 }
 
 .danger {
@@ -121,6 +124,26 @@ $smooth: all 0.3s ease-in-out;
     text-align: center;
     text-shadow: 2px 2px 5px $black-clr;
     margin: 1rem auto 2rem auto;
+    .icons {
+        font-size: 4.5rem;
+        background-color: $gold-clr;
+        border-radius: 50%;
+        color: $black-clr;
+    }
+}
+
+// React Icons
+.icons {
+    transition: $smooth;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+svg {
+    vertical-align: sub;
+    font-size: 3rem;
+    margin-left: 0.5rem;
 }
 
 // Container

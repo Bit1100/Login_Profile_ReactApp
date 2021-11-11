@@ -116,20 +116,36 @@ table {
         background-color: $primary-clr-500;
         font-size: 1.8rem;
         width: 44rem;
-        input {
-            padding: 1rem 2rem;
-            margin: 1.2rem;
-            border-radius: 2rem;
-            text-align: center;
-            outline: none;
-            font-size: 1.8rem;
-            border: 3px solid $primary-clr-500;
-            max-width: 30rem;
-            min-width: 30rem;
-            transition: $smooth;
+        .form-item {
+            margin: 1.5rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid;
             &:hover,
             &:focus {
                 border-color: $primary-clr;
+            }
+            .icons {
+                font-size: 4.6rem;
+                background-color: $white-clr;
+            }
+            input {
+                padding: 1.2rem 2rem;
+                text-align: start;
+                outline: none;
+                height: 100%;
+                font-size: 2rem;
+                max-width: 30rem;
+                min-width: 30rem;
+                transition: $smooth;
+                &:focus,
+                &:hover {
+                    outline: none;
+                }
+            }
+            &:first-child {
+                margin-top: 4rem;
             }
         }
         .radio {
@@ -144,6 +160,9 @@ table {
                 margin: 0 1rem;
                 padding: 0.6rem 2.5rem;
                 font-size: 2.5rem;
+                .icons {
+                    margin-left: 1rem;
+                }
             }
         }
     }
@@ -155,7 +174,7 @@ table {
 .modal {
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 45%;
     width: 50rem;
     transform: translate(0, 100%) rotateY(60deg) scale(0);
     transform-origin: center;

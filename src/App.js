@@ -14,8 +14,13 @@ import {
   MAX_DECIMAL_LENGTH,
   ZERO,
 } from "./constants";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 function App() {
+  const [showLoader, setShowLoader] = useState(false);
   const [usersData, setUsersData] = useState({
     users: [],
     fetchStatus: false,
@@ -44,6 +49,18 @@ function App() {
     setUsers(usersData);
   }, [usersData]);
 
+  //  Success msg Popup method
+  const redirectPopup = (msg) => {
+    toast.info(<h2>{msg}...</h2>, {
+      position: "top-right",
+      autoClose: 2200,
+      closeOnClick: true,
+      theme: "colored",
+      rtl: true,
+      pauseOnHover: false,
+      newestOnTop: true,
+    });
+  };
   // Aet Error if it exists while form validation
   function showError(error) {
     const { msg, errStatus, msgClass } = error;
@@ -145,10 +162,7 @@ function App() {
 
     let _usersData = usersData.users;
     e.preventDefault();
-    let { id, image, name, dob, religion, height } = e.target;
-
-    // If the image is not uploaded, default will be in use
-    image = !image.value ? "/images/Bit.jpg" : image.value.slice(12);
+    let { id, name, dob, religion, height } = e.target;
 
     /* Update the data if any*/
     let updateUser = _usersData.find((item) => item._id === id.value);
@@ -190,7 +204,6 @@ function App() {
       updateUser.height = height.value;
       updateUser.dob = dob.value;
       updateUser.religion = religion.value;
-      updateUser.image = image;
       showError({
         msg: "Profile Updated",
         errStatus: false,
@@ -207,6 +220,7 @@ function App() {
     <Router>
       <Provider
         value={{
+          redirectPopup,
           formdata,
           setFormdata,
           updateUserData,
@@ -218,6 +232,8 @@ function App() {
           usersData,
           modalActive,
           setModalActive,
+          showLoader,
+          setShowLoader
         }}
       >
         <Routes>

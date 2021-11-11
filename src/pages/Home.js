@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { AiOutlineLogin } from "react-icons/ai";
+import { context } from "../context";
 
 const Home = () => {
-  let navigate = useNavigate();
+  const { redirectPopup } = useContext(context);
+  const navigate = useNavigate();
 
   const handleRedirect = () => {
-    navigate("login");
+    redirectPopup("Redirecting to Login Page");
+    setTimeout(() => {
+      navigate("login");
+    }, 4000);
   };
 
   return (
     <div className="loader flex justify-center items-center">
       <button onClick={handleRedirect} className="btn btn-primary">
-        Go to Login Page
+        Login Here <AiOutlineLogin />
       </button>
     </div>
   );
