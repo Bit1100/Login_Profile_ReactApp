@@ -22,6 +22,14 @@ Beautifully Used localStorage to hold the data permanently unless it's being man
 
 Used Context API for data distribution across the components.
 
+## Libraries Added
+
+1. "react-icons" for icons
+2. "react-toastify" for toast
+3. "react-datepicker" for custom calender
+4. "@tippy.js/react" for tooltips.
+5. "react-spinners" for loader
+
 ## Miscellaneous
 
 Regular Expression(RegEx), Form Validation, Form Handling with custom hook - useInput(), Modal Creation and termination with click on Overlay, and many more other concepts are in use.
