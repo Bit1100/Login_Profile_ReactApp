@@ -61,6 +61,7 @@ function App() {
       newestOnTop: true,
     });
   };
+
   // Aet Error if it exists while form validation
   function showError(error) {
     const { msg, errStatus, msgClass } = error;
@@ -233,7 +234,7 @@ function App() {
           modalActive,
           setModalActive,
           showLoader,
-          setShowLoader
+          setShowLoader,
         }}
       >
         <Routes>
